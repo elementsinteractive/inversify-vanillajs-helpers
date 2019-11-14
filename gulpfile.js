@@ -37,7 +37,8 @@ var tsLibProject = tsc.createProject("tsconfig.json", {
 
 gulp.task("build-lib", function () {
     return gulp.src([
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "!node_modules/**/*.js"
     ])
         .pipe(tsLibProject())
         .on("error", function (err) {
@@ -52,7 +53,8 @@ var tsEsProject = tsc.createProject("tsconfig.json", {
 
 gulp.task("build-es", function () {
     return gulp.src([
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "!node_modules/**/*.js"
     ])
         .pipe(tsEsProject())
         .on("error", function (err) {
@@ -68,7 +70,8 @@ var tsDtsProject = tsc.createProject("tsconfig.json", {
 
 gulp.task("build-dts", function () {
     return gulp.src([
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "!node_modules/**/*.js"
     ])
         .pipe(tsDtsProject())
         .on("error", function (err) {
@@ -85,7 +88,8 @@ var tstProject = tsc.createProject("tsconfig.json");
 
 gulp.task("build-src", function () {
     return gulp.src([
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "!node_modules/**/*.js"
     ])
         .pipe(tstProject())
         .on("error", function (err) {
@@ -98,7 +102,8 @@ var tsTestProject = tsc.createProject("tsconfig.json");
 
 gulp.task("build-test", function () {
     return gulp.src([
-        "test/**/*.ts"
+        "test/**/*.ts",
+        "!node_modules/**/*.js"
     ])
         .pipe(tsTestProject())
         .on("error", function (err) {
